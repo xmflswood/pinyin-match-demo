@@ -1,18 +1,43 @@
 {
-  "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@babel/preset-es2015": "^7.0.0-beta.53",
-    "babel-preset-env": "^1.7.0",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-html-minify": "0.0.14",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-rev": "^9.0.0"
+  "name": "new-pinyin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "compression": "^1.7.4",
-    "express": "^4.17.1",
-    "gulp-uglify": "^3.0.2"
-  }
+    "core-js": "^3.6.5",
+    "pinyin-match": "^1.2.1",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
