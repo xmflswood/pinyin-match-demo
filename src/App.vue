@@ -8,7 +8,7 @@
       <div class="item">
           <h3 class="time">匹配时间:<span style="color: red;">{{time1}}</span>（毫秒）</h3>
           <h3>列表长度:{{showList.length}}</h3>
-          <input placeholder="检索" type="text" style="padding: 5px 0;margin-top: 15px;" v-model="kw1">
+          <input placeholder="检索" type="text" v-model="kw1">
           <div class="list">
               <div v-for="(i, index) in showList" :key="i + index">
                   {{index}}#:
@@ -100,6 +100,9 @@ export default {
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+input {
+  padding: 5px 0;margin-top: 15px;
 }
 header {
   background: linear-gradient(120deg ,#7f70f5,#0ea0ff);
