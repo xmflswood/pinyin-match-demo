@@ -14,7 +14,7 @@
       </div>
       <div class="item" v-if="!isMobile">
         <h3 class="time">匹配时间:<span style="color: red;">{{time2}}</span>（毫秒）</h3>
-          <h3>字串长度（大量多音字）:{{long.length}}</h3>
+          <h3>字串长度（大量多音字）:{{long.length}} <span style="font-weight: normal;font-size: 14px;">当前匹配位置: {{showResult}}</span></h3>
           <input placeholder="检索" type="text" v-model="kw2">
           <p v-html="showText" class="list"></p>
         </div>
@@ -42,6 +42,7 @@ export default {
       long: data.long,
       kw2: '',
       showText: data.long,
+      showResult: false,
       isMobile: /windows phone|iphone|android/ig.test(window.navigator.userAgent)
     }
   },
@@ -68,8 +69,11 @@ export default {
         var start = (new Date()).getTime()
         var m = PinyinMatch.match(this.long, v)
         this.time2 = (new Date()).getTime() - start
+        this.showResult = m
         if (m) {
           this.showText = redFont(this.long, m[0], m[1])
+        } else {
+          this.showText = this.long
         }
       } else {
         this.time2 = 0
